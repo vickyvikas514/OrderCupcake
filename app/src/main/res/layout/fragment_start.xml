@@ -19,6 +19,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".StartFragment">
+    <data>
+        <variable
+            name="startfragment"
+            type="com.example.cupcake.StartFragment" />
+    </data>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -46,7 +51,7 @@
                 android:layout_marginBottom="@dimen/side_margin"
                 android:text="@string/order_cupcakes"
                 android:textAppearance="?attr/textAppearanceHeadline4"
-                android:textColor="@color/material_on_background_emphasis_medium" />
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/order_one_cupcake"
@@ -55,7 +60,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/margin_between_elements"
                 android:minWidth="@dimen/order_cupcake_button_width"
-                android:text="@string/one_cupcake" />
+                android:text="@string/one_cupcake"
+                android:onClick="@{() -> startfragment.orderCupcake(1)}"/>
 
             <Button
                 android:id="@+id/order_six_cupcakes"
@@ -64,7 +70,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/margin_between_elements"
                 android:minWidth="@dimen/order_cupcake_button_width"
-                android:text="@string/six_cupcakes" />
+                android:text="@string/six_cupcakes"
+                android:onClick="@{() -> startfragment.orderCupcake(6)}" />
 
             <Button
                 android:id="@+id/order_twelve_cupcakes"
@@ -73,7 +80,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/margin_between_elements"
                 android:minWidth="@dimen/order_cupcake_button_width"
-                android:text="@string/twelve_cupcakes" />
+                android:text="@string/twelve_cupcakes"
+                android:onClick="@{() -> startfragment.orderCupcake(12)}" />
         </LinearLayout>
     </ScrollView>
 </layout>
