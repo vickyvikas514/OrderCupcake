@@ -20,11 +20,11 @@
     <string name="six_cupcakes">Six Cupcakes</string>
     <string name="twelve_cupcakes">Twelve Cupcakes</string>
     <string name="choose_flavor">Choose Flavor</string>
-    <string name="vanilla">Vanilla</string>
-    <string name="chocolate">Chocolate</string>
-    <string name="red_velvet">Red Velvet</string>
-    <string name="salted_caramel">Salted Caramel</string>
-    <string name="coffee">Coffee</string>
+    <string name="vanilla">Vanilla(2.00)</string>
+    <string name="chocolate">Chocolate(3.00)</string>
+    <string name="red_velvet">Red Velvet(4.00)</string>
+    <string name="salted_caramel">Salted Caramel(3.00)</string>
+    <string name="coffee">Coffee(2.00)</string>
     <string name="special_flavor">Special Flavor</string>
     <string name="cancel">Cancel</string>
     <string name="next">Next</string>

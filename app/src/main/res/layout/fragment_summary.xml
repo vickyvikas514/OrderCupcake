@@ -47,8 +47,7 @@
                     style="@style/Widget.Cupcake.TextView.OrderSummary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/quantity"
-                    android:textAllCaps="true"
+                    android:text="QUANTITY"                    android:textAllCaps="true"
                     android:textStyle="normal" />
 
                 <TextView
@@ -57,7 +56,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/order_summary_margin"
-                    tools:text="6 cupcakes" />
+                    tools:text="6 cupcakes"
+                    android:text="@{viewModel.quantity.toString()}"/>
 
                 <View
                     android:id="@+id/divider1"
@@ -80,7 +80,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/order_summary_margin"
-                    tools:text="Chocolate" />
+                    tools:text="Chocolate"
+                android:text= "@{viewModel.flavor}"/>
 
                 <View
                     android:id="@+id/divider2"
@@ -103,7 +104,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/order_summary_margin"
-                    tools:text="Sunday" />
+                    tools:text="Sunday"
+                    android:text="@{viewModel.date}"/>
 
                 <View
                     android:id="@+id/divider3"
@@ -120,7 +122,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="@dimen/side_margin"
-                    tools:text="Total $5.00" />
+                    tools:text="Total $5.00"
+                    android:text="@{@string/total_price(viewModel.price)}"/>
 
             </LinearLayout>
 

@@ -18,10 +18,23 @@ import java.util.Locale
  * [OrderViewModel] holds information about a cupcake order in terms of quantity, flavor, and
  * pickup date. It also knows how to calculate the total price based on these order details.
  */
+private const val PRICE_PER_CUPCAKE = 2.00
+private const val PRICE_FOR_SAME_DAY=3.00
+private const val pricevanilla=2.00
+private const val pricechocolate=4.00
+private const val priceredvelvet=4.00
+private const val pricecaramel=3.00
+private const val pricecoffe=2.00
+
+
 class OrderViewModel : ViewModel() {
+
+
+
 
     // Quantity of cupcakes in this order
     val dateOptions = getPickupOption()
+
 
     private val _quantity = MutableLiveData<Int>()
     val quantity: LiveData<Int> = _quantity
@@ -37,7 +50,7 @@ class OrderViewModel : ViewModel() {
     val date: LiveData<String> = _date
 
     // Price of the order so far
-    private val _price = MutableLiveData<Double>(0.0)
+    private val _price = MutableLiveData<Double>()
     val price: LiveData<Double> = _price
 
 
@@ -49,6 +62,7 @@ class OrderViewModel : ViewModel() {
      */
     fun setQuantity(numberCupcakes: Int) {
         _quantity.value = numberCupcakes
+        updatePrice()
 
     }
 
@@ -68,6 +82,7 @@ class OrderViewModel : ViewModel() {
      */
     fun setDate(pickupDate: String) {
         _date.value = pickupDate
+        updatePrice()
 
     }
 
@@ -87,6 +102,23 @@ class OrderViewModel : ViewModel() {
 
         }
         return options
+    }
+    fun resetOrder(){
+        _quantity.value=0
+        _flavor.value=""
+        _date.value = dateOptions[0]
+        _price.value = 0.0
+    }
+    init {
+        resetOrder()
+    }
+    private fun updatePrice(){
+        var calculatedprice=(quantity.value ?:0)* PRICE_PER_CUPCAKE
+        if(dateOptions[0]==_date.value){
+             calculatedprice+= PRICE_FOR_SAME_DAY
+        }
+        //if(== _flavor.value)
+        _price.value=calculatedprice
     }
 
     /**
