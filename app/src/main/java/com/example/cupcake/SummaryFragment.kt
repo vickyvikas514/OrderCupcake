@@ -69,7 +69,7 @@ class SummaryFragment : Fragment() {
         val orderSummary = getString(
             R.string.order_details,
             resources.getQuantityString(R.plurals.cupcakes,numberOfCupcakes,numberOfCupcakes),
-         
+
             sharedViewModel.flavor.value.toString(),
             sharedViewModel.date.value.toString(),
             sharedViewModel.price.value.toString()
