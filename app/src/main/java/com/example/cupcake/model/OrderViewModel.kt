@@ -20,11 +20,7 @@ import java.util.Locale
  */
 private const val PRICE_PER_CUPCAKE = 2.00
 private const val PRICE_FOR_SAME_DAY=3.00
-private const val pricevanilla=2.00
-private const val pricechocolate=4.00
-private const val priceredvelvet=4.00
-private const val pricecaramel=3.00
-private const val pricecoffe=2.00
+
 
 
 class OrderViewModel : ViewModel() {

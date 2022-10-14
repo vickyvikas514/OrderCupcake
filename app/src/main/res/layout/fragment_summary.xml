@@ -130,13 +130,23 @@
 
             </LinearLayout>
 
+
             <Button
                 android:id="@+id/send_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/side_margin"
                 android:text="@string/send"
+
                 android:onClick="@{() -> summaryfragment.sendOrder()}"/>
+            <Button
+                android:id="@+id/cancel_button"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                android:text="@string/cancel"
+                android:onClick="@{() -> summaryfragment.cancelOrder()"/>
 
         </LinearLayout>
     </ScrollView>
